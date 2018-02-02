@@ -145,17 +145,12 @@ alpha = 0.05
 model = sm.OLS(y, x).fit()
 # print(model.summary())
 
-predict_feature = [x for x in predict_feature if x != 'temperatureMin_3']
-x = sm.add_constant(df[predict_feature])
-model = sm.OLS(y, x).fit()
-# print(model.summary())
-
 predict_feature = [x for x in predict_feature if x != 'dewpointMean_3']
 x = sm.add_constant(df[predict_feature])
 model = sm.OLS(y, x).fit()
 # print(model.summary())
 
-predict_feature = [x for x in predict_feature if x != 'temperatureMean_3']
+predict_feature = [x for x in predict_feature if x != 'temperatureMin_3']
 x = sm.add_constant(df[predict_feature])
 model = sm.OLS(y, x).fit()
 # print(model.summary())
@@ -165,17 +160,22 @@ x = sm.add_constant(df[predict_feature])
 model = sm.OLS(y, x).fit()
 # print(model.summary())
 
+predict_feature = [x for x in predict_feature if x != 'temperatureMean_3']
+x = sm.add_constant(df[predict_feature])
+model = sm.OLS(y, x).fit()
+# print(model.summary())
+
 predict_feature = [x for x in predict_feature if x != 'dewpointMax_3']
 x = sm.add_constant(df[predict_feature])
 model = sm.OLS(y, x).fit()
 # print(model.summary())
 
-predict_feature = [x for x in predict_feature if x != 'temperatureMax_3']
+predict_feature = [x for x in predict_feature if x != 'dewpointMean_2']
 x = sm.add_constant(df[predict_feature])
 model = sm.OLS(y, x).fit()
 # print(model.summary())
 
-predict_feature = [x for x in predict_feature if x != 'dewpointMean_2']
+predict_feature = [x for x in predict_feature if x != 'temperatureMax_3']
 x = sm.add_constant(df[predict_feature])
 model = sm.OLS(y, x).fit()
 # print(model.summary())
@@ -197,12 +197,12 @@ model = sm.OLS(y, x).fit()
 predict_feature = [x for x in predict_feature if x != 'temperatureMin_2']
 x = df[predict_feature]
 model = sm.OLS(y, x).fit()
-print(model.summary())
+# print(model.summary())
 
 
 lrm = linear_model.LinearRegression()
 validation_size = 0.20
-seed = 7
+seed = 14
 X_train, X_test, y_train, y_test = train_test_split(
     x, y, test_size=validation_size, random_state=seed)
 
