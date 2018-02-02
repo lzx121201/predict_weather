@@ -329,45 +329,45 @@ print("slope: ",slope4)
 print("intercept: ",intercept4)
 
 #Multiple linear Regression
-# print("\nMultiple linear Regression")
-# x = [[1,Lab_1[i],Christmas_Test[i],Lab_2[i],Easter_Test[i],Lab_3[i]] for i in range(len(studentid))]
-# y = Exam_Grade
-# estimate_v = stochastic_gradient_descent(x,y,len(x[0]))
-# print("estimate_v: ",estimate_v)
-#
-#
-# def bootstrap_statistic_m(x,y, stats_fn, num_samples):
-#     stats = []
-#     for i in range(num_samples):
-#         data = zip(x,y)
-#         sample_data = bootstrap_sample(data)
-#         stat=stats_fn(sample_data)
-#         stats.append(stat)
-#     return stats
-#
-# def bootstrap_sample(data):
-#     list_data = list(data)
-#     rand_data = [random.choice(list_data) for _ in list_data]
-#     return rand_data
-#
-# def estimate_sample_v(sample):
-#     x_sample, y_sample = zip(*sample)
-#     return stochastic_gradient_descent(x_sample,y_sample,len(x_sample[0]))
-#
-# coefficients = bootstrap_statistic_m(x,y,estimate_sample_v,20)
-# # print("boot_strap x,y",coefficients)
-#
-#
-#
-# bootstrap_standard_errors = [standard_deviation([coefficient[i] for coefficient in coefficients]) for i in range(len(estimate_v))]
-#
-# # print("bootstrap_standard_errors: ",bootstrap_standard_errors)
-#
-# print("R^2: ",multiple_r_squared(estimate_v,x,y))
-#
-# for i in range(len(estimate_v)):
-#  	print("i",i,"estimate_v",estimate_v[i],"error", bootstrap_standard_errors[i],"p-value", p_value(estimate_v[i], bootstrap_standard_errors[i]))
-#
+print("\nMultiple linear Regression")
+x = [[1,Lab_1[i],Christmas_Test[i],Lab_2[i],Easter_Test[i],Lab_3[i]] for i in range(len(studentid))]
+y = Exam_Grade
+estimate_v = stochastic_gradient_descent(x,y,len(x[0]))
+print("estimate_v: ",estimate_v)
+
+
+def bootstrap_statistic_m(x,y, stats_fn, num_samples):
+    stats = []
+    for i in range(num_samples):
+        data = zip(x,y)
+        sample_data = bootstrap_sample(data)
+        stat=stats_fn(sample_data)
+        stats.append(stat)
+    return stats
+
+def bootstrap_sample(data):
+    list_data = list(data)
+    rand_data = [random.choice(list_data) for _ in list_data]
+    return rand_data
+
+def estimate_sample_v(sample):
+    x_sample, y_sample = zip(*sample)
+    return stochastic_gradient_descent(x_sample,y_sample,len(x_sample[0]))
+
+coefficients = bootstrap_statistic_m(x,y,estimate_sample_v,20)
+# print("boot_strap x,y",coefficients)
+
+
+
+bootstrap_standard_errors = [standard_deviation([coefficient[i] for coefficient in coefficients]) for i in range(len(estimate_v))]
+
+# print("bootstrap_standard_errors: ",bootstrap_standard_errors)
+
+print("R^2: ",multiple_r_squared(estimate_v,x,y))
+
+for i in range(len(estimate_v)):
+ 	print("i",i,"estimate_v",estimate_v[i],"error", bootstrap_standard_errors[i],"p-value", p_value(estimate_v[i], bootstrap_standard_errors[i]))
+
 
 # K-means Clusters Analysis
 x = [[Lab_1[i],Christmas_Test[i],Lab_2[i],Easter_Test[i],Lab_3[i],part_time_job[i],part_time_job[i],Exam_Grade[i]] for i in range(len(studentid))]

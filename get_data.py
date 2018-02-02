@@ -29,8 +29,8 @@ def get_data_streamed_to_local(url,api_key,langtitude,longtitude,target_date,day
      return records
 
 #
-records = get_data_streamed_to_local(BASE_URL, API_KEY,LATITUDE,LONGTITUDE ,START_DATE, 1000)
-fileName = "C:\\Users\\zhengxing.li\\Desktop\\predict_weather\\data1000.txt"
+records = get_data_streamed_to_local(BASE_URL, API_KEY,LATITUDE,LONGTITUDE ,START_DATE, 3)
+fileName = "C:\\Users\\zhengxing.li\\Desktop\\predict_weather\\data_1Feb2018.txt"
 for record in records:
     file = open(fileName,'a', encoding='utf-8')
     file.write(str(record))
