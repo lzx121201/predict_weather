@@ -221,7 +221,7 @@ print("The Median Absolute Error: %.2f degrees celsius" % median_absolute_error(
 
 
 data = []
-fileName = "C:\\Users\\zhengxing.li\\Desktop\\predict_weather\\data_1Feb2018.txt"
+fileName = "C:\\Users\\zhengxing.li\\Desktop\\predict_weather\\data_4Feb2018.txt"
 dict = []
 records = []
 
@@ -241,4 +241,4 @@ replace_nan(df)
 predict_x = df[predict_feature].head(1)
 predict_y = lrm.predict(predict_x)
 print(predict_x)
-print("Mean temperature of 2 Feb 2018: ",predict_y)
+print("Mean temperature of 5 Feb 2018: ",predict_y)
